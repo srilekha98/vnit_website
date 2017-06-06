@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="reg2.css">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+
+
+ </script>
+	<title></title>
+</head>
+
+<body>
+
+<div id="logo" class="item">
+    
+    <h3><a href="" ><img src="logo2.png" width="50px" height="50px" align="middle"></a>BaNaNA DeVeLoPmEnT</h3><h6>AnONYMOUS TEaM</h6>
+
+    </div>
+    	
+    	<div id="login" class="item" ><a><img src="L.png" width="100px" height="80px" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"" ></a>
+        <h5>VNITIANz</h5></div>    	
+      <div id="guest" class="item" ><a href=""><img src="guest.png" width="100px" height="100px" ></a>
+      <h5>GuestS</h5></div>  
+    	   
+    	<div id="admin" class="item"> <a ><img src="admin.png" width="80px" height="100px" onclick="document.getElementById('id02').style.display='block'" style="width:auto;""></a><h5>AdMin</h5></div>
+    	<video poster="back.jpg" id="1234" playsinline autoplay muted loop>
+            <source src="reg.mp4" type="video/mp4">
+                                      </video>
+                                        <div class="item-overlay top"></div>
+
+<div id="id01" class="modal">
+  
+  <form  class="modal-content animate"  >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="shrek.png" alt="Avatar" class="avatar" height="150" width="10">
+    </div>
+
+    <div class="container">
+	<form method="post" action="checklogin()">
+      <label><b>VNiTiaN iD</b></label>
+      <input type="number" placeholder="UR VNIT TAG" name="uname" id= "uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="HaVe To ReMeMbeR ThiZ" name="psw" id="psw" required>
+        
+      <button type="submit" onclick="checklogin()" >Go BaNaNa</button>
+	  </form>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">DaNgeR</button>
+      <span class="psw">OuT of Ur Minds??<a href="#">HelP?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+
+function checklogin() {
+console.log("checkd in");
+      $.ajax({
+        url:"vnitian_login.php", //the page containing php script
+        type: "POST", //request type
+        success:function(result){
+         alert(result);
+		 console.log("ajaaaaaaaaaax");
+       }
+     });
+ }
+ 
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="man.png" alt="Avatar" class="avatar" height="200" width="40">
+    </div>
+
+    <div class="container">
+      <label><b>ADMIN ID</b></label>
+      <input type="number" placeholder="UR AdMin Id" name="adminuname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="HaVe To ReMeMbeR ThiZ" name="adminpsw" required>
+        
+      <button type="submit">Go BaNaNa</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">DaNgeR</button>
+      <span class="psw">OuT of Ur Minds??<a href="#">HelP?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+var modal = document.getElementById('id02');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>
